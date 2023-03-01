@@ -7,21 +7,55 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>JavaScript Testing & Exercices</title>
 </head>
-<body class="h-screen">
+<body class="container mx-auto mt-4">
 
-    <header class="grid grid-cols-1 w-full text-center p-12 bg-gradient-to-r from-cyan-300 to-blue-700 drop-shadow-2xl">
+    <header class="grid grid-cols-1 w-full text-center p-12 bg-gradient-to-r from-cyan-300 to-blue-700 drop-shadow-2xl rounded">
         <h1 class="text-md md:text-3xl font-bold">JavaScript Testing & Exercices</h1>
     </header>
-    <main class="grid grid-cols-1 p-24 bg-slate-500">
-        <section class="border p-6 overflow-y-hidden">
-
+    <main class="grid grid-cols-1 md:grid-cols-2 p-24 pt-4 bg-slate-500 gap-4 ">
+        <!-- h-max para que el contenido utilice el espacio máximo de su contenido -->
+        <section class="grid grid-cols-1 h-max">
+            <div class="rounded-t-lg p-4 text-center bg-gray-800">
+                <h1 class="font-bold text-white">JavaScript Console</h1>
+            </div>
+            <div>
+                <div id="console" class="p-4 bg-black text-white overflow-y-hidden h-max" style="list-style-type: none;">
+                </div>
+            </div>
         </section>
+        <section class="grid grid-cols-1 h-max">
+            <div class="rounded-t-lg p-4 text-center bg-gray-800">
+                <h1 class="font-bold text-white">Output</h1>
+            </div>
+            <div class="border border-gray-600 p-4 bg-gray-600 text-gray-100">
+                <p>Not content yet.</p>
+            </div>
+        </section>
+
         <footer class="w-full border p-6">
             Created by nol4
         </footer>
     </main>
 
+<script>
+
+    console.log = function(contenido) {
+        let consoleContenido = document.getElementById("console");
+        let elementList = document.createElement("li");
+        elementList.innerText += "> " + contenido;
+        consoleContenido.append(elementList)
+    }
+
+    window.onerror = function(message, url, line, column, error) {
+        let consoleElement = document.getElementById("console");
+        let elementList = document.createElement("li")
+        elementList.innerHTML += "[-] Error: " + message + "<br>" + "[-] Line: " + line;
+        consoleElement.append(elementList)
+      };
+
+</script>
 
 <script src="./Ejercicios/array/sort.js"></script>
+
 </body>
 </html>

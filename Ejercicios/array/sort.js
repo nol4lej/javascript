@@ -26,6 +26,8 @@ const lista = ["Juan 5","Luisa 7","Ana 4","Pedro 3"];
 
 const listaNumeros = [5,6,1,7,3,9,4,3];
 console.log(listaNumeros)
+console.log(listaNumerossd)
+
 // listaNumeros.sort( (a,b) => a - b)
 
 // function comparar (listaNumeros){
@@ -33,4 +35,5 @@ console.log(listaNumeros)
 // }
 
 
-console.log(listaNumeros)
+
+// console.log(listaNumeros)
