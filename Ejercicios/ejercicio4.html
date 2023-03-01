@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 14 - DOM basico y atributos XHTML</title>
+
+</head>
+<body>
+<p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+<a id="enlace_1" onclick="muestraOculta('1')" href="#">Ocultar contenidos</a>
+<br />
+<p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+<a id="enlace_2" onclick="muestraOculta('2')"  href="#">Ocultar contenidos</a>
+<br />
+<p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+<a id="enlace_3" onclick="muestraOculta('3')" href="#">Ocultar contenidos</a>
+<!-- <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="fdbb156280df80880bee2ab3-|49" defer=""></script></body> -->
+</html>
+
+<script>
+
+    // Para que la funcion tome individualmente a cada boton, es necesario agregar el id como parametro a la funcion.
+    // onclick="muestraOculta('1')" <<<<<< 3 equivale al parametro que se reconocera en la funcion como el id.
+
+    // function muestraOculta(id) {
+    //     let contenido = document.getElementById('contenidos_' + id)
+    //     let enlace = document.getElementById("enlace_" + id)
+
+    //     if(contenido.style.display == "" || contenido.style.display == "block"){
+    //         contenido.style.display = "none";
+    //         enlace.innerText = "Mostrar contenido"
+    //     } else {
+    //         contenido.style.display = "block"
+    //         enlace.innerText = "Ocultar contenido";
+    //     }
+
+    // }
+
+    const muestraOculta = (id) => {
+        const contenido = document.getElementById("contenidos_" + id)
+        const enlaces = document.getElementById("enlace_" + id)
+
+        switch(contenido.style.display){
+            case "block":
+                contenido.style.display = "none"
+                enlaces.innerText = "Mostrar contenido"
+                break
+            case "none":
+                contenido.style.display = "block"
+                enlaces.innerText = "Ocultar contenido"
+                break
+            default:
+                contenido.style.display = "none"
+                enlaces.innerText = "Mostrar contenido"
+        }
+    }
+</script>
+
+<!-- EJERCICIOS -->
+<!-- A partir de la página web proporcionada, completar el código JavaScript para que:
+
+    Cuando se pinche sobre el primer enlace, se oculte su sección relacionada
+    Cuando se vuelva a pinchar sobre el mismo enlace, se muestre otra vez esa sección de contenidos
+    Completar el resto de enlaces de la página para que su comportamiento sea idéntico al del primer enlace
+    Cuando una sección se oculte, debe cambiar el mensaje del enlace asociado (pista: propiedad innerHTML) -->

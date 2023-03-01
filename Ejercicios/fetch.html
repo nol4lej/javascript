@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+    // fetch puede leer imagines, archivos json locales, etc. y generalmente se utiliza para consumir una API
+
+    //++++++++++++++ METODO 1 
+    fetch("https://pokeapi.co/api/v2/pokemon/")
+        // then significa que espera una promesa. En then creamos una funcion de flechita (abreviada) para almacenar la respuesta.
+        // Esa respuesta la retornamos en formato json.
+        // .then( respuesta => respuesta.json())
+        .then((respuesta) => {
+            return respuesta.json()
+        })
+        // creamos otro then para recibir los datos de la respuesta
+        .then(datosRespuesta => {
+            // console.log(datosRespuesta)
+
+            // para recorrer el array de objetos recibido utilizamos podemos utilizar forEach. element esa cada uno de los objetos.
+            datosRespuesta.results.forEach(element => {
+                // console.log(element)
+            });
+        })
+        // con catch podemos capturar errores del backend. La respuesta es entregada por el mismo.
+        .catch(error => console.log(error))
+
+    //++++++++++++++ METODO 2 (utilizando async y await)
+    const Metodo2 = async() => {
+        try {
+            // fetch esperara la respuesta (await) y almacenará esta respuesta en respuestaPeticion
+            const respuestaPeticion = await fetch("https://pokeapi.co/api/v2/pokemon/")
+            // los datos recibidos (datosPeticion) esperara a la respuestaPeticion.json
+            const datosPeticion = await respuestaPeticion.json()
+            // console.log(datosPeticion.results)
+
+            // EJEMPLOS USANDO MAP
+            // Map recorre un array para crear nuevos arreglos.
+            // datosPeticion.results.map(pokemones => console.log(pokemones.name))
+            // crear arreglo con los nombres obtenidos del objeto en el arreglo. Creo funcion de flecha "pokemones" y obtengo los name.
+            const arrayNombres = datosPeticion.results.map(pokemones => pokemones.name)
+            console.log(arrayNombres)
+            // const arrayUrl = datosPeticion.results.map(pokemones => pokemones.url)
+            // console.log(arrayUrl)
+
+            // EJEMPLOS DE FILTER
+            // sirve para filtrar los resultados obtenidos
+            const arrayNombresFiltrados = datosPeticion.results.filter(pokemones => pokemones.name !== "bulbasaur")
+            console.log(arrayNombresFiltrados)
+
+        } catch (error) {
+           console.log(error)
+        }
+    }
+    Metodo2()
+
+</script>
+
+</body>
+</html>

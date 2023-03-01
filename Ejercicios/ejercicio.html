@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 11 - DOM basico</title>
+
+</head>
+<body>
+<div id="test"></div>
+<p>Lorem ipsum dolor sit amet, <a href="http://prueba">consectetuer adipiscing elit</a>. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. <a href="http://prueba2">Fusce porta</a>. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio. Praesent id metus.</p>
+<p>Aenean at nisl. Maecenas egestas dapibus odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin consequat auctor diam. <a href="http://prueba">Ut bibendum blandit est</a>. Curabitur vestibulum. Nunc malesuada porttitor sapien. Aenean a lacus et metus venenatis porta. Suspendisse cursus, sem non dapibus tincidunt, lorem magna porttitor felis, id sodales dolor dolor sed urna. Sed rutrum nulla vitae tellus. Sed quis eros nec lectus tempor lacinia. Aliquam nec lectus nec neque aliquet dictum. Etiam <a href="http://prueba3">consequat sem quis massa</a>. Donec aliquam euismod diam. In magna massa, mattis id, pellentesque sit amet, porta sit amet, lectus. Curabitur posuere. Aliquam in elit. Fusce condimentum, arcu in scelerisque lobortis, ante arcu scelerisque mi, at cursus mi risus sed tellus.</p>
+<p>Donec sagittis, nibh nec ullamcorper tristique, pede velit feugiat massa, at sollicitudin justo tellus vitae justo. Vestibulum aliquet, nulla sit amet imperdiet suscipit, nunc erat laoreet est, a <a href="http://prueba">aliquam leo odio sed sem</a>. Quisque eget eros vehicula diam euismod tristique. Ut dui. Donec in metus sed risus laoreet sollicitudin. Proin et nisi non arcu sodales hendrerit. In sem. Cras id augue eu lorem dictum interdum. Donec pretium. Proin <a href="http://prueba4">egestas</a> adipiscing ligula. Duis iaculis laoreet turpis. Mauris mollis est sit amet diam. Curabitur hendrerit, eros quis malesuada tristique, ipsum odio euismod tortor, a vestibulum nisl mi at odio. <a href="http://prueba5">Sed non lectus non est pellentesque</a> auctor.</p>
+
+<script>
+
+    var test = document.getElementById("test");
+
+    // Ejercicio
+    // A partir de la página web proporcionada y utilizando las funciones DOM, mostrar por pantalla la siguiente información:
+    //  1   Número de enlaces de la página
+    //  2   Dirección a la que enlaza el penúltimo enlace
+    //  3   Numero de enlaces que enlazan a http://prueba/
+    //  4   Número de enlaces del tercer párrafo
+
+    // constate para almacenar en un array con todas las etiquetas "p" y utilizarla globalmente:
+    const textsp = document.querySelectorAll("p");
+
+    // constante para almacenar en un array todas las etiquetas "a" y utilizarla globalmente:
+    const TotalEnlaces = document.querySelectorAll("a");
+
+    // Ejercicio 1:
+        // Ejemplo A:
+    console.log("Ejemplo A: Hay", TotalEnlaces.length, "enlaces en total.");
+    test.innerHTML = "Ejemplo A: Hay " + TotalEnlaces.length + " enlaces en total.";
+
+        // Ejemplo B:
+    let sumaEnl = 0;
+    for(let i = 0; i < textsp.length; i++){
+        let parrafo = textsp[i];
+        let enlaces = parrafo.querySelectorAll("a");
+        sumaEnl = sumaEnl + enlaces.length;
+    }
+    console.log("Ejemplo B: Hay", sumaEnl, "enlaces en total.");
+
+    // Ejercicio 2:
+        // Ejemplo A:
+    let parrafos = textsp.length;
+    let ultimoParrafo = textsp[textsp.length-1];
+    let listaLinks = ultimoParrafo.getElementsByTagName("a");
+    let ultLink = listaLinks[listaLinks.length-2];
+    console.log("Ejemplo A: La direccion del penultimo link es:", ultLink.href);
+
+        // Ejemplo B:
+    let penUlt = TotalEnlaces[TotalEnlaces.length-2];
+    console.log("Ejemplo B: La direccion del penultimo link es:",penUlt.href);
+
+    // Ejercicio 3:
+    let EnlaceBuscado = "http://prueba/";
+    let contadorEnlaces = 0;
+    for(let i = 0; i < TotalEnlaces.length; i++){
+        let IndEnlaces = TotalEnlaces[i];
+        let LinkEnlace = IndEnlaces.href;
+        if(LinkEnlace == EnlaceBuscado){
+            contadorEnlaces = contadorEnlaces + 1;
+        } else{
+
+        }
+    }
+    console.log("Hay",contadorEnlaces,"que enlazan a http://prueba/")
+
+    // Ejercicio 4:
+    let TercerParrafo = textsp[textsp.length-1];
+    let NumeroEnlaces = document.querySelectorAll("p");
+    console.log("Hay",NumeroEnlaces.length,"enlaces en el parrafo 3.")
+
+</script>
+
+</html>

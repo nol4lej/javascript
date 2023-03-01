@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // Encontrar la la letra que mas se repite en la cadena de texto
+        // la funcion recibe como parametero una cadena de texto
+
+        let text = "Esto es una cadena de333 texto"
+        let arrayLetras = []
+
+        function letraMasComun (){
+            //CAMBIAR LAS LETRAS A MINUSCULAS O MAYUSCULAS PARA QUE TENGAN EL MISMO RANGO ASCII
+            let textLC = text.toLowerCase()
+            for(let letra = 0; letra < textLC.length; letra++){
+                //CAMBIAR LAS LETRAS A CODIGO ASCII (charCodeAt()) PARA RECONOCER LAS LETRAS DEL STRING
+                //Las ASCII minusculas van de 97 a 122
+                let letraUnicode = textLC.charCodeAt(letra)
+                if(letraUnicode >= 97 && letraUnicode <= 122){
+                    arrayLetras.push(textLC.charAt(letra))
+                }
+            }
+            // console.log(arrayLetras)
+
+                        // let contadorLetras = 0
+            // arrayLetras.forEach(function(letras){
+            //     console.log(letras)
+            // })
+            let conteo = {};
+            let maximo = arrayLetras[0];
+            let maximoConteo = 1;
+
+            for(let k = 0; k < arrayLetras.length; k++){
+                let elemento = arrayLetras[k];
+                if (conteo[elemento] == null) {
+                    conteo[elemento] = 1;
+                } else {
+                    conteo[elemento]++;
+                }
+                if (conteo[elemento] > maximoConteo) {
+                    maximo = elemento;
+                    maximoConteo = conteo[elemento];
+
+            }
+
+            return maximo;
+
+            }
+        }
+
+        letraMasComun()
+
+
+    </script>
+
+</body>
+</html>

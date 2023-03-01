@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 12 - DOM b�sico y atributos XHTML</title>
+
+<style type="text/css">
+.oculto { display: none; }
+.visible { display: inline; }
+</style>
+
+<script >
+    // function MostrarContenido(){
+    //     let contenido = document.getElementById("adicional");
+    //     let contenidoClass = contenido.classList.contains("oculto");
+    //     let btnText = document.getElementById("enlace");
+    //     if(contenidoClass == true){
+    //         contenido.classList.remove("oculto");
+    //         btnText.innerText = "Ocultar texto";
+    //     } else{
+    //         contenido.classList.add("oculto");
+    //         btnText.innerText = "Seguir leyendo";
+    //     }
+    // }
+
+    const MostrarContenido = () =>{
+        const contenido = document.getElementById("adicional")
+        const btnText = document.getElementById("enlace")
+        
+
+        switch(contenido.className){
+            case "oculto":
+                contenido.classList.remove("oculto")
+                btnText.innerText = "Ocultar contenido"
+                break
+            default:
+                contenido.classList.add("oculto")
+                btnText.innerText = "Mostrar contenido"
+                break
+        }
+    }
+
+
+
+</script>
+
+</head>
+<body>
+<p id="texto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. <span id="adicional" class="oculto">Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio. Praesent id metus.</span></p>
+<a id="enlace" href="#" onclick="MostrarContenido()">Seguir leyendo</a>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="bfea349fea81b279b4ae1011-|49" defer=""></script></body>
+</html>
+
+
+    <!-- Ejercicio  -->
+    <!-- Completar el código JavaScript proporcionado para que cuando se pinche sobre el enlace se muestre completo el contenido de texto.
+        Además, el enlace debe dejar de mostrarse después de pulsarlo por primera vez.
+        La acción de pinchar sobre un enlace forma parte de los "Eventos" de JavaScript que se ven en el siguiente capítulo.
+        En este ejercicio, sólo se debe saber que al pinchar sobre el enlace, se ejecuta la función llamada muestra(). -->
+

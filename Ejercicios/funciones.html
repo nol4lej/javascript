@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="test.js"></script>
+</head>
+<body>
+
+    <div style="width: 100px; height: 50px; background-color: aqua;">
+        <p id="resultado"></p>
+        <p id="resultado2"></p>
+
+        <button id="btn">Button</button>
+    </div>
+
+    <script>
+        let resultado = document.getElementById("resultado");
+        // funcion de flecha abreviada
+        // const suma = (num, num2) => (num + num2)
+        const suma = (num, num2) => {
+            return (num + num2)
+        }
+        resultado.innerText = suma(5,12)
+
+        // template string
+        let resultado2 = document.getElementById("resultado2")
+        // template string abreviado:
+        // const suma2 = (num1, num2) => `Resultado: ${num1 + num2}`
+        const suma2 = (num1, num2) => {
+            return `Resultado: ${num1 + num2} `
+        }
+        resultado2.innerText = suma2(10,12)
+
+        // EJEMPLO DE EVENT
+        let boton = document.getElementById("btn")
+        boton.addEventListener("click", function(){
+            console.log("me clickeaste")
+        })
+
+    </script>
+
+</body>
+</html>

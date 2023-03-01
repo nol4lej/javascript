@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+
+    </div>
+
+
+    <script>
+
+        const vivito = true
+        //crear objeto
+        const mascota = {
+            nombre: "Hugo",
+            edad: 4,
+            vivo: vivito
+        }
+        console.log(mascota)
+        console.log(mascota.nombre)
+
+        // agregar propiedad al objeto
+        mascota.id = 1
+        mascota.peso = 10
+        console.log(mascota)
+        // agregar propiedad array al objeto
+        mascota.direccion = ["quilpue",123,"valparaiso"]
+        console.log(mascota.direccion)
+
+        // acceder a propiedades
+        const EdadMascota = mascota.edad
+        console.log(EdadMascota)
+        // acceder a propiedades usando Destructuring objects
+        const {edad} = mascota
+        console.log(edad)
+
+        // -------- Ejemplo 2
+        const web = {
+            nombre: "bluuweb",
+            links: {
+                enlace: "www.bluuweb.cl"
+            },
+            redesSociales: {
+                youtube: {
+                    enlace: "youtube.com/bluuweb",
+                    nombre: "bluuweb yt"
+                },
+                facebook: {
+                    enlace: "facebook.com/bluuweb",
+                    nombre: "bluuweb fb"
+                }
+            }
+        }
+        console.log(web.redesSociales.youtube.enlace)
+        //acceder a propiedades
+        const youtubeEnlace = web.redesSociales.youtube.enlace
+        console.log(youtubeEnlace)
+        // acceder a propiedades usando Destructuring objects
+        const {enlace, nombre} = web.redesSociales.facebook
+        console.log(enlace)
+
+    </script>
+
+
+</body>
+</html>
