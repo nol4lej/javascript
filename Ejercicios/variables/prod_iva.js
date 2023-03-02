@@ -51,9 +51,10 @@ window.onload = function() {
         let valor2 = parseFloat(iva.value);
 
         const resultado_iva = valor1 * valor2 / 100;
-        console.log(resultado_iva)
+        const resultado_masIva = valor1 + resultado_iva;
+        console.log(resultado_masIva)
 
-        resultado_final.innerHTML = "El valor total + el IVA es: " + resultado_iva;
+        resultado_final.innerHTML = "El valor total + el IVA es: " + resultado_masIva;
         div.append(resultado_final);
 
     })
