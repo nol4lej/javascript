@@ -13,6 +13,9 @@ const div = document.getElementById("results");
 window.onload = function() {
     // remueve el elemento <p>Not content yet.</p>
     let not = document.getElementById("not_content").remove()
+
+    div.classList = "grid grid-cols-1 md:grid-cols-3 gap-4 text-black";
+
     // se crean los elementos input y button para trabajar los datos del ejercicio.
     let input_producto = document.createElement("input");
     let input_iva = document.createElement("input");
@@ -21,11 +24,12 @@ window.onload = function() {
 
     // para agregar id/type/number y demas atributos, tambien existe:
     // input_producto.setAttribute("id", "inputProd"); // Solo acepta 2 argumentos: el nombre del atributo y su valor"
+    // producto
     input_producto.id = "inputProd";
     input_producto.type = "number"
     input_producto.placeholder = "Ingresa el valor de un producto"
     input_producto.min = 0;
-    // IVA
+    // iva
     input_iva.id = "inputIva";
     input_iva.type = "number";
     input_iva.placeholder = "Ingresa el IVA"
@@ -36,8 +40,7 @@ window.onload = function() {
     button_input.id = "calcular";
     button_input.type = "button";
     button_input.textContent = "Calcular total"
-
-    // div.classList.add("asd")
+    button_input.classList = "bg-gray-400 hover:bg-gray-200"
 
     // se adjuntan (append) los elementos al contenedor
     div.append(input_producto, input_iva, button_input);
@@ -54,26 +57,9 @@ window.onload = function() {
         const resultado_masIva = valor1 + resultado_iva;
         console.log(resultado_masIva)
 
+        resultado_final.classList = "grid col-span-1 md:col-span-3 font-bold";
         resultado_final.innerHTML = "El valor total + el IVA es: " + resultado_masIva;
         div.append(resultado_final);
 
     })
 }
-
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-// SOLO FALTA AREGLAR EL ESTILO PARA LOS INPUT, BUTTON Y EL RESULTADO FINAL
-
-
-
-
-
