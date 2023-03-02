@@ -26,21 +26,21 @@ window.onload = function() {
     // input_producto.setAttribute("id", "inputProd"); // Solo acepta 2 argumentos: el nombre del atributo y su valor"
     // producto
     input_producto.id = "inputProd";
-    input_producto.type = "number"
-    input_producto.placeholder = "Ingresa el valor de un producto"
+    input_producto.type = "number";
+    input_producto.placeholder = "Valor producto";
     input_producto.min = 0;
     // iva
     input_iva.id = "inputIva";
     input_iva.type = "number";
-    input_iva.placeholder = "Ingresa el IVA"
+    input_iva.placeholder = "Valor IVA";
     input_iva.min = 0;
     input_iva.max = 100;
 
     // button
     button_input.id = "calcular";
     button_input.type = "button";
-    button_input.textContent = "Calcular total"
-    button_input.classList = "bg-gray-400 hover:bg-gray-200"
+    button_input.textContent = "Calcular total";
+    button_input.classList = "bg-gray-400 hover:bg-gray-200";
 
     // se adjuntan (append) los elementos al contenedor
     div.append(input_producto, input_iva, button_input);
@@ -62,4 +62,7 @@ window.onload = function() {
         div.append(resultado_final);
 
     })
+
+    console.log("Script loaded correctly.")
+
 }
