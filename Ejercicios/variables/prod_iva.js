@@ -9,7 +9,7 @@
 // se captura el contenedor donde se integrarán los datos
 const div = document.getElementById("results");
 
-// evento onload para cargar todos los elementos del ejercicio apenas cargue el archivo.
+// evento onload con una funcion anonima para cargar todos los elementos del ejercicio apenas cargue el archivo.
 window.onload = function() {
     // remueve el elemento <p>Not content yet.</p>
     let not = document.getElementById("not_content").remove()
