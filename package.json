@@ -1,0 +1,19 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "Studying JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nol4lej/javascript.git"
+  },
+  "author": "nol4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nol4lej/javascript/issues"
+  },
+  "homepage": "https://github.com/nol4lej/javascript#readme"
+}
